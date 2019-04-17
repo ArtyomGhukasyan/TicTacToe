@@ -16,7 +16,7 @@ public class Reader {
         String input = scanner.nextLine();
 
         while(true){
-            if (input.equals("")){
+            if (!isInteger(input)){
                 System.out.print("wrong input, " + requestText);
                 input = scanner.nextLine();
             }else{
@@ -25,6 +25,14 @@ public class Reader {
         }
 
 
+    }
+        private static boolean isInteger(String str){
+        try {
+            int num = Integer.parseInt(str);
+        } catch (Exception ex){
+            return false;
+        }
+        return true;
     }
 
 }
